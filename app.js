@@ -32,6 +32,7 @@ app.set("view engine", "ejs");
 
 app.use('/assets', express.static('./public'));
 app.use('/', require("./routes/index"));
+app.use('/authUsuarios', require("./routes/authUsuarios"));
 
 // Puerto que utilizará el servidor
 const PORT = process.env.PORT || 8000;

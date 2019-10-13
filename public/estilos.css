@@ -1,3 +1,26 @@
-h1{
-    background-color: black;
+.full-heigth{
+    max-height: 55px;
+    height: auto;
+    margin-top: 3px;
+}
+
+.full-width{
+    max-width: 100%;
+}
+
+.reset-margin-padding{
+    margin: 0;
+    padding: 0;
+}
+
+.centered-right{
+    position: absolute;
+    top: 41%;
+    right: 23%;
+    transform: translate(50%, 10%);
+}
+
+.word-wrap{
+    word-wrap: break-word;
+    text-align: center;
 }
