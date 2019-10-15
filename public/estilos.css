@@ -51,6 +51,13 @@ html,body{
     padding: 40px;
 }
 
+.register-content-container{
+    width: 50%;
+    margin: 0 auto;
+    height: auto;
+    padding: 40px;
+}
+
 .login-content-container img{
     max-width: 100%;
     width: 100%;
