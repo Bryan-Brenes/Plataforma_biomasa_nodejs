@@ -1,7 +1,17 @@
+/*Este se puso para centrar el login*/
+html,body{
+    height: 100%;
+}
+
 .full-heigth{
     max-height: 55px;
     height: auto;
     margin-top: 3px;
+}
+
+.full-heigth-2{
+    max-height: 100%;
+    height: 100%;
 }
 
 .full-width{
@@ -9,8 +19,8 @@
 }
 
 .reset-margin-padding{
-    margin: 0;
-    padding: 0;
+    margin: 0!important;
+    padding: 0!important;
 }
 
 .centered-right{
@@ -23,4 +33,29 @@
 .word-wrap{
     word-wrap: break-word;
     text-align: center;
+}
+
+.container-login{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url("/assets/leaves_bg.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.login-content-container{
+    width: 30%;
+    margin: 0 auto;
+    height: auto;
+    padding: 40px;
+}
+
+.login-content-container img{
+    max-width: 100%;
+    width: 100%;
+}
+
+.login-content-container h3{
+    color: #797979;
 }
