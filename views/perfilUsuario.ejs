@@ -15,7 +15,7 @@
                <button class="btn btn-large waves-effect col s12 sideNavBtn green lighten-3" style="margin-top: 40px;">Ver perfil</button>
                <button class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Buscar perfiles</button>
                <button class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Chat</button>
-               <button class="btn btn-large waves-effect col s12 sideNavBtn red lighten-3" style="margin-top: 400px;">Cerrar sesión</button>
+               <button onclick="cambiarIndex()" class="btn btn-large waves-effect col s12 sideNavBtn red lighten-3 btn_cerrarSesion" style="margin-top: 320px;">Cerrar sesión</button>
             </div>
         </div>
         <div class="col s12 full-heigth-3">
@@ -27,3 +27,9 @@
      </div>
  </div>
  </div>
+
+ <script>
+ function cambiarIndex(){
+    window.location.href = "/";
+ }
+ </script>
