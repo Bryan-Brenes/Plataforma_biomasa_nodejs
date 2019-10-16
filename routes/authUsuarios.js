@@ -28,4 +28,8 @@ router.post('/register', urlencodedParser, (req, res) => {
     res.render("perfilUsuario");
 });
 
+router.get('/main', (req, res) => {
+    res.render('perfilUsuario');
+})
+
 module.exports = router;

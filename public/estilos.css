@@ -14,6 +14,10 @@ html,body{
     height: 100%;
 }
 
+.full-heigth-3{
+    min-height: 100%;
+}
+
 .full-width{
     max-width: 100%;
 }
@@ -65,4 +69,19 @@ html,body{
 
 .login-content-container h3{
     color: #797979;
+}
+
+.fotoPerfil{
+    max-height: 150px;
+    height: 150px;
+    margin-top: 40px;
+}
+
+.sideNavBtn{
+    color: #797979; 
+    margin-bottom: 10px;
+}
+
+.mainContainer{
+    min-height: 100vh!important;
 }
