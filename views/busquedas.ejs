@@ -3,7 +3,7 @@
     <div class="col s2 green lighten-5 mainContainer">
         <div class="row">
             <div class="col s12 center-align">
-                <img class="circle fotoPerfil" src="/assets/fotoPerfil1.jpeg" alt="imagen de prefil">
+                <img class="circle fotoPerfil responsive-img" src="/assets/fotoPerfil1.jpeg" alt="imagen de prefil">
             </div>
             <div class="col s12 center-align">
                 <h6>Oscar Umaña</h6>
@@ -31,7 +31,7 @@
                 <p class="col s12 center-align">Encuentre a sus proveedores de forma ágil y sencilla, utilice los filtros para encontrar las empresas más convenientes par usted</p>
             </div>
             <div class="row">
-                <form action="/authUsuarios/busquedas" method="get">
+                <form action="/authUsuarios/busquedas" method="get" id="filtrosForm">
                     <div class="row">
                         <div class="input-field col s3">
                             <input placeholder="Nombre" name="nombreEmpresa" id="nombreEmpresa" type="text" class="validate">
@@ -69,16 +69,60 @@
                         </div>
                     </div>
                     <div class='row'>
-                        <button onclick="resetFiltros()" id="resetFiltros" name='resetFiltros' class='col offset-s8 s2 btn waves-effect grey lighten-1' style="color: black;">Reset</button>
+                        <input onclick="resetFiltros()" type="button" value="Reset" class='col offset-s8 s2 btn waves-effect grey lighten-1' style="color: black;">
                         <button type='submit' id="filtrarBusqueda" name='filtrarBusqueda' class='col s2 btn waves-effect'>Filtrar</button>
                     </div>
                 </form>
             </div>
+
+            <div class="row"> <!-- Aquí van los resultados de las búsquedas -->
+                <div class="col s3">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="/assets/fotoPerfil1.jpeg">
+                            <span class="card-title">Card Title</span>
+                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">remove_red_eye</i></a>
+                        </div>
+                        <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                        </div>
+                    </div>  
+                </div>
+
+                <div class="col s3">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="/assets/fotoPerfil1.jpeg">
+                                <span class="card-title">Card Title</span>
+                                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">remove_red_eye</i></a>
+                            </div>
+                            <div class="card-content">
+                                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                            </div>
+                        </div>  
+                    </div>
+
+                    <div class="col s3">
+                            <div class="card">
+                                <div class="card-image">
+                                    <img src="/assets/fotoPerfil1.jpeg">
+                                    <span class="card-title">Card Title</span>
+                                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">remove_red_eye</i></a>
+                                </div>
+                                <div class="card-content">
+                                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                                </div>
+                            </div>  
+                        </div>
+            </div> <!-- Fin de un card -->
+
+            
+
         </div>
     </div>
 </div>
 
-
+<script type="text/javascript"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var elems = document.querySelectorAll('select');
@@ -86,21 +130,16 @@
     });
 
     function resetFiltros(){
-        var nombreEmpresa = document.getElementById('nombreEmpresa');
+        /*var nombreEmpresa = document.getElementById('nombreEmpresa');
         var volumen = document.getElementById('volumen');
         var options = document.querySelectorAll('#provincia option');
         var optionsRol = document.querySelectorAll('#rol option');
+        var selectP = document.getElementById('rol');
 
-        nombreEmpresa.setAttribute('value') = "";
-        volumen.setAttribute('value') = 0;
-        
-        for (var i = 0, l = options.length; i < l; i++) {
-            options[i].selected = options[i].defaultSelected;
-        }
-
-        for (var i = 0, l = optionsRol.length; i < l; i++) {
-            optionsRol[i].selected = optionsRol[i].defaultSelected;
-        }
+        nombreEmpresa.value = '';
+        volumen.value = '0';
+        console.log('reseteando');*/
+        window.location.href = '/authUsuarios/busquedas';
     }
 
     function cambiarPantalla(ventana){
