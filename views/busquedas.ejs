@@ -1,0 +1,117 @@
+
+<div class="row">
+    <div class="col s2 green lighten-5 mainContainer">
+        <div class="row">
+            <div class="col s12 center-align">
+                <img class="circle fotoPerfil" src="/assets/fotoPerfil1.jpeg" alt="imagen de prefil">
+            </div>
+            <div class="col s12 center-align">
+                <h6>Oscar Umaña</h6>
+            </div>
+            <div class="col s12">
+                <hr>
+            </div>
+            <div class="row sideNavBtnContainer">
+                <button onclick="cambiarPantalla('main')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5" style="margin-top: 40px;">Ver perfil</button>
+                <button class="btn btn-large waves-effect col s12 sideNavBtn green lighten-3">Buscar perfiles</button>
+                <button onclick="cambiarPantalla('chat')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Chat</button>
+                <button onclick="cambiarPantalla('index')" class="btn btn-large waves-effect col s12 sideNavBtn red lighten-3 btn_cerrarSesion" style="margin-top: 320px;">Cerrar sesión</button>
+            </div>
+        </div>
+        <div class="col s12 full-heigth-3">
+
+        </div>
+    </div>
+    <div class="col s10 mainContainer">
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <h2>Búsquedas</h2>
+                </div>
+                <p class="col s12 center-align">Encuentre a sus proveedores de forma ágil y sencilla, utilice los filtros para encontrar las empresas más convenientes par usted</p>
+            </div>
+            <div class="row">
+                <form action="/authUsuarios/busquedas" method="get">
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <input placeholder="Nombre" name="nombreEmpresa" id="nombreEmpresa" type="text" class="validate">
+                            <label for="nombreEmpresa">Nombre de la empresa</label>
+                        </div>
+
+                        <div class="input-field col s3">
+                            <select id="provincia" name="provincia">
+                                <option value="0" selected>Todas</option>
+                                <option value="1">Alajueja</option>
+                                <option value="2">Cartago</option>
+                                <option value="3">Guanacaste</option>
+                                <option value="4">Heredia</option>
+                                <option value="5">Limón</option>
+                                <option value="6">Puntarenas</option>
+                                <option value="7">San José</option>
+                            </select>
+                            <label>Provincia</label>
+                        </div>
+
+                        <div class="input-field col s3">
+                            <select id="rol" name="rol">
+                                <option value="0" selected>Todos</option>
+                                <option value="1">Proveedor</option>
+                                <option value="2">Distribuidor</option>
+                                <option value="3">Comprador</option>
+                            </select>
+                            <label>Rol</label>
+                        </div>
+
+                        <div class="input-field col s3">
+                            <input placeholder="Volumen" name="volumen" id="volumen" type="number" value="0" min="0" step="10" class="validate">
+                            <label for="volumen">Volumen de biomasa (kg)</label>
+                            <span class="helper-text">Un valor de cero deshabilita el filtro</span>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <button onclick="resetFiltros()" id="resetFiltros" name='resetFiltros' class='col offset-s8 s2 btn waves-effect grey lighten-1' style="color: black;">Reset</button>
+                        <button type='submit' id="filtrarBusqueda" name='filtrarBusqueda' class='col s2 btn waves-effect'>Filtrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, {});
+    });
+
+    function resetFiltros(){
+        var nombreEmpresa = document.getElementById('nombreEmpresa');
+        var volumen = document.getElementById('volumen');
+        var options = document.querySelectorAll('#provincia option');
+        var optionsRol = document.querySelectorAll('#rol option');
+
+        nombreEmpresa.setAttribute('value') = "";
+        volumen.setAttribute('value') = 0;
+        
+        for (var i = 0, l = options.length; i < l; i++) {
+            options[i].selected = options[i].defaultSelected;
+        }
+
+        for (var i = 0, l = optionsRol.length; i < l; i++) {
+            optionsRol[i].selected = optionsRol[i].defaultSelected;
+        }
+    }
+
+    function cambiarPantalla(ventana){
+        if (ventana === 'index'){
+            window.location.href = "/";
+        } else if(ventana === 'busquedas'){
+            window.location.href = '/authUsuarios/busquedas';
+        } else if(ventana === 'main'){
+            window.location.href = '/authUsuarios/main';
+        } else if (ventana === 'chat'){
+            window.location.href = '/authUsuarios/chat';
+        }  
+    }
+</script>

@@ -12,10 +12,10 @@
                 <hr>
             </div>
             <div class="row sideNavBtnContainer">
-                <button class="btn btn-large waves-effect col s12 sideNavBtn green lighten-3" style="margin-top: 40px;">Ver perfil</button>
-                <button class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Buscar perfiles</button>
-                <button class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Chat</button>
-                <button onclick="cambiarIndex()" class="btn btn-large waves-effect col s12 sideNavBtn red lighten-3 btn_cerrarSesion" style="margin-top: 320px;">Cerrar sesión</button>
+                <button onclick="cambiarPantalla('main')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-3" style="margin-top: 40px;">Ver perfil</button>
+                <button onclick="cambiarPantalla('busquedas')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Buscar perfiles</button>
+                <button onclick="cambiarPantalla('chat')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Chat</button>
+                <button onclick="cambiarPantalla('index')" class="btn btn-large waves-effect col s12 sideNavBtn red lighten-3 btn_cerrarSesion" style="margin-top: 320px;">Cerrar sesión</button>
             </div>
         </div>
         <div class="col s12 full-heigth-3">
@@ -29,7 +29,15 @@
 </div>
 
 <script>
-function cambiarIndex(){
-    window.location.href = "/";
-}
+    function cambiarPantalla(ventana){
+        if (ventana === 'index'){
+            window.location.href = "/";
+        } else if(ventana === 'busquedas'){
+            window.location.href = '/authUsuarios/busquedas';
+        } else if(ventana === 'main'){
+            window.location.href = '/authUsuarios/main';
+        } else if (ventana === 'chat'){
+            window.location.href = '/authUsuarios/chat';
+        }  
+    }
 </script>

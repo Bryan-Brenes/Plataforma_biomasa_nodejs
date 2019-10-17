@@ -32,4 +32,12 @@ router.get('/main', (req, res) => {
     res.render('perfilUsuario');
 })
 
+router.get('/busquedas', (req, res) => {
+    res.render('busquedas');
+})
+
+router.get('/chat', (req, res) => {
+    res.render('chat');
+})
+
 module.exports = router;

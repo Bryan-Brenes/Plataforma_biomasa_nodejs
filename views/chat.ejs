@@ -1,6 +1,6 @@
- <div class="">
- <div class="row">
-     <div class="col s2 green lighten-5 mainContainer">
+<div class="">
+<div class="row">
+    <div class="col s2 green lighten-5 mainContainer">
         <div class="row">
             <div class="col s12 center-align">
                 <img class="circle fotoPerfil" src="/assets/fotoPerfil1.jpeg" alt="imagen de prefil">
@@ -12,23 +12,23 @@
                 <hr>
             </div>
             <div class="row sideNavBtnContainer">
-               <button class="btn btn-large waves-effect col s12 sideNavBtn green lighten-3" style="margin-top: 40px;">Ver perfil</button>
-               <button onclick="cambiarPantalla('busquedas')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Buscar perfiles</button>
-               <button onclick="cambiarPantalla('chat')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Chat</button>
-               <button onclick="cambiarPantalla('index')" class="btn btn-large waves-effect col s12 sideNavBtn red lighten-3 btn_cerrarSesion" style="margin-top: 320px;">Cerrar sesión</button>
+                <button onclick="cambiarPantalla('main')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5" style="margin-top: 40px;">Ver perfil</button>
+                <button onclick="cambiarPantalla('busquedas')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Buscar perfiles</button>
+                <button class="btn btn-large waves-effect col s12 sideNavBtn green lighten-3">Chat</button>
+                <button onclick="cambiarPantalla('index')" class="btn btn-large waves-effect col s12 sideNavBtn red lighten-3 btn_cerrarSesion" style="margin-top: 320px;">Cerrar sesión</button>
             </div>
         </div>
         <div class="col s12 full-heigth-3">
 
         </div>
-     </div>
-     <div class="col s10 mainContainer">
-         <p>Perfil</p>
-     </div>
- </div>
- </div>
+    </div>
+    <div class="col s10 mainContainer">
+        <p>Chat</p>
+    </div>
+</div>
+</div>
 
- <script>
+<script>
     function cambiarPantalla(ventana){
         if (ventana === 'index'){
             window.location.href = "/";
@@ -40,4 +40,4 @@
             window.location.href = '/authUsuarios/chat';
         }  
     }
- </script>
+</script>
