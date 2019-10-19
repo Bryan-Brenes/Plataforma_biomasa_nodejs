@@ -145,3 +145,44 @@ blockquote cite {
 blockquote cite:before {
     content: "\2014 \2009";
 }
+
+.chatContainer{
+    position: relative;
+}
+
+.InputMessageContainer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #a5d6a7;
+    color: white;
+    text-align: center;
+    padding-left: 2%;
+}
+
+.chatTextFieldContainer{
+    background-color: #e8f5e9;
+    border-radius: 25px;
+    margin: 10px 0px;
+}
+
+.chatTextField{
+    background-color: #e8f5e9;
+    margin: 0!important;
+    border-bottom: none!important;
+    border: 1px solid #797979;
+    color: #212121;
+}
+
+.chatTextField::placeholder{
+    color: #797979;
+}
+
+#enviarMensajeBtn{
+    border-radius: 50%;
+}
+
+.usuarioExternoChat, .usuarioDuenioChat{
+    border-radius: 20px;
+}

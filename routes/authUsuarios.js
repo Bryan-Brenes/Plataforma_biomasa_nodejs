@@ -40,4 +40,8 @@ router.get('/chat', (req, res) => {
     res.render('chat');
 })
 
+router.get('/chatConversacion', (req, res) => {
+    res.render('chatConversacion');
+})
+
 module.exports = router;

@@ -1,0 +1,88 @@
+
+<div class="row">
+    <div class="col s2 green lighten-5 mainContainer">
+        <div class="row">
+            <div class="col s12 center-align">
+                <img class="circle fotoPerfil" src="/assets/fotoPerfil1.jpeg" alt="imagen de prefil">
+            </div>
+            <div class="col s12 center-align">
+                <h6>Oscar Umaña</h6>
+            </div>
+            <div class="col s12">
+                <hr>
+            </div>
+            <div class="row sideNavBtnContainer">
+                <button onclick="cambiarPantalla('main')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5" style="margin-top: 40px;">Ver perfil</button>
+                <button onclick="cambiarPantalla('busquedas')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-5">Buscar perfiles</button>
+                <button onclick="cambiarPantalla('chat')" class="btn btn-large waves-effect col s12 sideNavBtn green lighten-3">Chat</button>
+                <button onclick="cambiarPantalla('index')" class="btn btn-large waves-effect col s12 sideNavBtn red lighten-3 btn_cerrarSesion" style="margin-top: 320px;">Cerrar sesión</button>
+            </div>
+        </div>
+        <div class="col s12 full-heigth-3">
+
+        </div>
+    </div>
+    <div class="col s10 mainContainer chatContainer">
+        <div class="container" style="margin-top: 10%;">
+
+            <!-- Aqui va la conversacion-->
+            <div class="row">
+                <div class="col s5 usuarioExternoChat green lighten-5">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima libero consectetur fugit saepe? Dignissimos ipsum, eaque dolor, atque, commodi quidem sit obcaecati hic sapiente autem veritatis illum debitis aut dolorum!
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s5 offset-s7 usuarioDuenioChat green lighten-3">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde quasi sit nostrum voluptatem earum sint incidunt et facere necessitatibus aut accusamus aliquam perspiciatis natus quos, temporibus qui voluptate possimus itaque.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s5 usuarioExternoChat green lighten-5">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima libero consectetur fugit saepe? Dignissimos ipsum, eaque dolor, atque, commodi quidem sit obcaecati hic sapiente autem veritatis illum debitis aut dolorum!
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s5 offset-s7 usuarioDuenioChat green lighten-3">
+                    <p>
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde quasi sit nostrum voluptatem earum sint incidunt et facere necessitatibus aut accusamus aliquam perspiciatis natus quos, temporibus qui voluptate possimus itaque.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="InputMessageContainer">
+                <div class="row reset-margin-padding full-heigth-3 valign-wrapper">
+                    <div class="col s11 valign-wrapper chatTextFieldContainer">
+                        <input class="chatTextField" placeholder="Mensaje" id="mensaje" type="text" class="validate">
+                    </div>
+                    <div class="col s1 right full-heigth-3">
+                        <button class="btn waves-effect" id="enviarMensajeBtn"><i class="material-icons">send</i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function cambiarPantalla(ventana){
+        if (ventana === 'index'){
+            window.location.href = "/";
+        } else if(ventana === 'busquedas'){
+            window.location.href = '/authUsuarios/busquedas';
+        } else if(ventana === 'main'){
+            window.location.href = '/authUsuarios/main';
+        } else if (ventana === 'chat'){
+            window.location.href = '/authUsuarios/chat';
+        }  
+    }
+</script>

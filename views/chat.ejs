@@ -31,8 +31,8 @@
             </div>
             <div class="row">
                 <div class="input-field offset-s9 col s3">
-                    <input placeholder="Nombre" name="nombreEmpresa" id="nombreEmpresa" type="text" class="validate">
-                    <label for="nombreEmpresa">Nombre de la empresa</label>
+                    <input  name="nombreUsuario" id="nombreUsuario" type="text" class="validate">
+                    <label for="nombreUsuario">Nombre del usuario</label>
                 </div>
             </div>
             <div class="row">
@@ -97,7 +97,7 @@
 
 <script>
     function irChat(){
-        console.log('Ir al chat');
+        window.location.href = '/authUsuarios/chatConversacion'
     }
 
     function cambiarPantalla(ventana){
