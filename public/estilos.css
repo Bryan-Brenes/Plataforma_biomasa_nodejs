@@ -197,3 +197,8 @@ blockquote cite:before {
 .userInfo p{
     margin: 0;
 }
+
+.input-telefono::-webkit-inner-spin-button, .input-telefono::-webkit-outer-spin-button{
+    -webkit-appearance: none; 
+    margin: 0; 
+}

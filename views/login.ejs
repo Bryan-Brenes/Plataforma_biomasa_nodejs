@@ -1,16 +1,17 @@
 <div class="valign-wrapper container-login grey lighten-4">
     <div class="login-content-container z-depth-5">
         <h3>Iniciar sesión</h3>
+
         <form action="/authUsuarios/login" method="POST">
             <div class="row">
                 <div class="input-field col s12">
-                    <input name="email" id="email" type="email" class="validate">
+                    <input name="email" id="email" type="email" class="validate" value="<%= typeof email != 'undefined' ? email : ''  %>">
                     <label for="email">Correo electrónico</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12">
-                    <input name="password" id="password" type="password" class="validate">
+                    <input name="password" id="password" type="password" class="validate" value="<%= typeof password != 'undefined' ? password : ''  %>">
                     <label for="password">Contraseña</label>
                 </div>
             </div>

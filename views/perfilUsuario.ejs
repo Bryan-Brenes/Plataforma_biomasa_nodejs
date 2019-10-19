@@ -23,12 +23,78 @@
         </div>
      </div>
      <div class="col s10 mainContainer">
-         <p>Perfil</p>
+         <div class="container">
+             <h3 id="nombreUsuarioTitulo">Nombre usuario</h3>
+             <form action="/authUsuarios/main" method="post">
+                <div class="input-field col s12">
+                    <input oninput="cambiarNombre()" type="text" id="nombre" name="nombre" class="validate">
+                    <label for="nombre">Nombre</label>
+                </div>
+                <div class="col s12">
+                    <h5>Tipo de usuario</h5>
+                </div>
+                <div class="input-field col s12">
+                    <select>
+                        <option value="" disabled selected>¿Qué tipo de usuario eres?</option>
+                        <option value="1">Comprador</option>
+                        <option value="2">Proveedor</option>
+                        <option value="3">Distribuidor</option>
+                    </select>
+                    <label>Tipo de usuario</label>
+                </div>
+                <div class="col s12">
+                    <h5>Información de contacto</h5>
+                </div>
+                <div class="input-field col s6">
+                    <input type="email" name="email" id="email" class="validate">
+                    <label for="email">Correo electrónico</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="number" name="telefono" id="telefono" class="validate input-telefono" style="-webkit-appearance: none">
+                    <label for="telefono">Número telefónico</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" id="paginaWeb" name="paginaWeb" class="validate">
+                    <label for="paginaWeb">Página web</label>
+                </div>
+                <div class="col s12">
+                    <h5>Información de la empresa</h5>
+                </div>
+                <div class="input-field col s12">
+                    <textarea class="materialize-textarea" name="direccion" id="direccion" cols="30" rows="10"></textarea>
+                    <label for="direccion">Dirección</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea class="materialize-textarea" name="mision" id="mision" cols="30" rows="10"></textarea>
+                    <label for="mision">Misión</label>
+                </div>
+                <div class="input-field col s12">
+                    <textarea class="materialize-textarea" name="vision" id="vision" cols="30" rows="10"></textarea>
+                    <label for="vision">Visión</label>
+                </div>
+                <button type='submit' id="actualizarPerfilInfo" name='actualizarPerfilInfo' class='col offset-s9 s3 btn waves-effect'>Guardar</button>
+                
+            </form>
+         </div>
      </div>
  </div>
  </div>
 
  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('select');
+        var instances = M.FormSelect.init(elems, {});
+    });
+
+    function cambiarNombre(){
+        var nombre = document.getElementById('nombre').value;
+        if(nombre != ''){
+            console.log(nombre);
+        }
+        var nombreH3 = document.getElementById('nombreUsuarioTitulo');
+        nombreH3.innerHTML = nombre;
+    }
+
     function cambiarPantalla(ventana){
         if (ventana === 'index'){
             window.location.href = "/";
