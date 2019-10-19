@@ -44,4 +44,8 @@ router.get('/chatConversacion', (req, res) => {
     res.render('chatConversacion');
 })
 
+router.get('/verPerfilBuscado', (req, res) => {
+    res.render('verPerfilBuscado');
+})
+
 module.exports = router;
