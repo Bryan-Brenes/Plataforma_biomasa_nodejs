@@ -86,3 +86,62 @@ html,body{
     min-height: 100vh!important;
 }
 
+.chat-item{
+    height: 10px!important;
+    max-height: 10px!important;
+    margin: 0!important;
+}
+
+.card-chat:hover{
+    -webkit-box-shadow: 8px 9px 18px -9px rgba(0,0,0,0.78);
+    -moz-box-shadow: 8px 9px 18px -9px rgba(0,0,0,0.78);
+    box-shadow: 8px 9px 18px -9px rgba(0,0,0,0.78);
+    
+}
+
+
+/*---------------------------------*/
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    width: 500px;
+    margin: 0.25em 0;
+    padding: 0.35em 40px;
+    line-height: 1.45;
+    position: relative;
+    color: #383838;
+}
+
+blockquote:before {
+    display: block;
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -8px;
+    top: -20px;
+    color: #7a7a7a;
+}
+
+blockquote:after {
+    display: block;
+    padding-right: 10px;
+    content: "\201D";
+    font-size: 80px;
+    position: absolute;
+    right: 40px;
+    bottom: -46px;
+    color: #7a7a7a;
+}
+
+blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+blockquote cite:before {
+    content: "\2014 \2009";
+}

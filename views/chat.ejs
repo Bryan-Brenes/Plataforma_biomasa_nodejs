@@ -23,12 +23,83 @@
         </div>
     </div>
     <div class="col s10 mainContainer">
-        <p>Chat</p>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <h2>Chats</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field offset-s9 col s3">
+                    <input placeholder="Nombre" name="nombreEmpresa" id="nombreEmpresa" type="text" class="validate">
+                    <label for="nombreEmpresa">Nombre de la empresa</label>
+                </div>
+            </div>
+            <div class="row">
+
+                <div onclick="irChat()" class="card-panel grey lighten-5 z-depth-1 card-chat grey lighten-2 ">
+                    <div class="row valign-wrapper chat-item ">
+                      <div class="col s1">
+                        <img src="/assets/fotoPerfil1.jpeg" alt="" class="circle responsive-img full-heigth-3"> <!-- notice the "circle" class -->
+                      </div>
+                      <div class="col s11">
+                        <span class="black-text">
+                          Nombre usuario
+                        </span>
+                      </div>
+                    </div>
+                </div>
+
+                <div onclick="irChat()" class="card-panel grey lighten-5 z-depth-1 card-chat grey lighten-2">
+                        <div class="row valign-wrapper chat-item ">
+                          <div class="col s1">
+                            <img src="/assets/fotoPerfil1.jpeg" alt="" class="circle responsive-img full-heigth-3"> <!-- notice the "circle" class -->
+                          </div>
+                          <div class="col s11">
+                            <span class="black-text">
+                              This is a square image. Add the "circle" class to it to make it appear circular.
+                            </span>
+                          </div>
+                        </div>
+                    </div>
+                
+                <div onclick="irChat()" class="card-panel grey lighten-5 z-depth-1 card-chat grey lighten-2">
+                        <div class="row valign-wrapper chat-item ">
+                            <div class="col s1">
+                            <img src="/assets/fotoPerfil1.jpeg" alt="" class="circle responsive-img full-heigth-3"> <!-- notice the "circle" class -->
+                            </div>
+                            <div class="col s11">
+                            <span class="black-text">
+                                This is a square image. Add the "circle" class to it to make it appear circular.
+                            </span>
+                            </div>
+                        </div>
+                </div>
+
+                <div onclick="irChat()" class="card-panel grey lighten-5 z-depth-1 card-chat grey lighten-2">
+                    <div class="row valign-wrapper chat-item ">
+                        <div class="col s1">
+                        <img src="/assets/fotoPerfil1.jpeg" alt="" class="circle responsive-img full-heigth-3"> <!-- notice the "circle" class -->
+                        </div>
+                        <div class="col s11">
+                        <span class="black-text">
+                            This is a square image. Add the "circle" class to it to make it appear circular.
+                        </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
 </div>
 </div>
 
 <script>
+    function irChat(){
+        console.log('Ir al chat');
+    }
+
     function cambiarPantalla(ventana){
         if (ventana === 'index'){
             window.location.href = "/";
