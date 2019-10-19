@@ -23,39 +23,42 @@
         </div>
     </div>
     <div class="col s10 mainContainer chatContainer">
-        <div class="container" style="margin-top: 10%;">
+        <div class="container" style="margin-top: 5%;">
 
             <!-- Aqui va la conversacion-->
-            <div class="row">
-                <div class="col s5 usuarioExternoChat green lighten-5">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima libero consectetur fugit saepe? Dignissimos ipsum, eaque dolor, atque, commodi quidem sit obcaecati hic sapiente autem veritatis illum debitis aut dolorum!
-                    </p>
+            <div class="contenedorConversacion" id="contenedorConversacionDiv">
+                <div class="row">
+                    <div class="col s5 offset-s1 usuarioExternoChat green lighten-5">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima libero consectetur fugit saepe? Dignissimos ipsum, eaque dolor, atque, commodi quidem sit obcaecati hic sapiente autem veritatis illum debitis aut dolorum!
+                        </p>
+                    </div>
                 </div>
-            </div>
+    
+                <div class="row">
+                    <div class="col s5 offset-s6 usuarioDuenioChat green lighten-3">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde quasi sit nostrum voluptatem earum sint incidunt et facere necessitatibus aut accusamus aliquam perspiciatis natus quos, temporibus qui voluptate possimus itaque.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col s5 offset-s1 usuarioExternoChat green lighten-5">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima libero consectetur fugit saepe? Dignissimos ipsum, eaque dolor, atque, commodi quidem sit obcaecati hic sapiente autem veritatis illum debitis aut dolorum!
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col s5 offset-s6 usuarioDuenioChat green lighten-3">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde quasi sit nostrum voluptatem earum sint incidunt et facere necessitatibus aut accusamus aliquam perspiciatis natus quos, temporibus qui voluptate possimus itaque.
+                        </p>
+                    </div>
+                </div>
 
-            <div class="row">
-                <div class="col s5 offset-s7 usuarioDuenioChat green lighten-3">
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde quasi sit nostrum voluptatem earum sint incidunt et facere necessitatibus aut accusamus aliquam perspiciatis natus quos, temporibus qui voluptate possimus itaque.
-                    </p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col s5 usuarioExternoChat green lighten-5">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima libero consectetur fugit saepe? Dignissimos ipsum, eaque dolor, atque, commodi quidem sit obcaecati hic sapiente autem veritatis illum debitis aut dolorum!
-                    </p>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col s5 offset-s7 usuarioDuenioChat green lighten-3">
-                    <p>
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde quasi sit nostrum voluptatem earum sint incidunt et facere necessitatibus aut accusamus aliquam perspiciatis natus quos, temporibus qui voluptate possimus itaque.
-                    </p>
-                </div>
             </div>
             
             <div class="InputMessageContainer">
@@ -64,7 +67,7 @@
                         <input class="chatTextField" placeholder="Mensaje" id="mensaje" type="text" class="validate">
                     </div>
                     <div class="col s1 right full-heigth-3">
-                        <button class="btn waves-effect" id="enviarMensajeBtn"><i class="material-icons">send</i></button>
+                        <button onclick="addMessage()" class="btn waves-effect" id="enviarMensajeBtn"><i class="material-icons">send</i></button>
                     </div>
                 </div>
             </div>
@@ -84,5 +87,26 @@
         } else if (ventana === 'chat'){
             window.location.href = '/authUsuarios/chat';
         }  
+    }
+    function addMessage() {
+
+        var chatTextField = document.getElementById('mensaje').value;
+        console.log(chatTextField);
+        if (chatTextField != ""){
+            const div = document.createElement('div');
+
+            div.className = 'row';
+
+            div.innerHTML = `
+            <div class="col s5 offset-s6 usuarioDuenioChat green lighten-3">
+                <p>
+                    ` + chatTextField + `
+                </p>
+            </div>
+            `;
+
+            document.getElementById('contenedorConversacionDiv').appendChild(div);
+            document.getElementById('mensaje').value = "";
+        }
     }
 </script>

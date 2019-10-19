@@ -186,3 +186,9 @@ blockquote cite:before {
 .usuarioExternoChat, .usuarioDuenioChat{
     border-radius: 20px;
 }
+
+.contenedorConversacion{
+    height: 700px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
