@@ -23,7 +23,7 @@
             
             <div class="row">
                 <div class="input-field col s6">
-                    <input name="nombre" id="nombre" type="text" class="validate">
+                    <input name="nombre" id="nombre" type="text" class="validate" value="<%= typeof nombre != 'undefined' ? nombre : '' %>">
                     <label for="nombre">Nombre</label>
                 </div>
                 <div class="input-field col s6">
@@ -53,20 +53,20 @@
                 </div>
                     
                 <div class="input-field col s6">
-                    <input name="telefono" id="telefono" type="text" class="validate">
+                    <input name="telefono" id="telefono" type="text" class="validate" value="<%= typeof telefono != 'undefined' ? telefono : '' %>">
                     <label for="telefono">Teléfono</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s6 full-height-2">
-                    <textarea id="indicaciones" name="direccion" class="materialize-textarea full-height-2"></textarea>
+                    <textarea id="indicaciones" name="direccion" class="materialize-textarea full-height-2" value="<%= typeof direccion != 'undefined' ? direccion : '' %>" ></textarea>
                     <label for="indicaciones">Indicaciones</label>
                 </div>
                 <div class="col s6">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="email" name="email" type="email" class="validate">
+                            <input id="email" name="email" type="email" class="validate" value="<%= typeof email != 'undefined' ? email : '' %>">
                             <label for="email">Correo electrónico</label>
                         </div>
                         <div class="input-field col s12">
