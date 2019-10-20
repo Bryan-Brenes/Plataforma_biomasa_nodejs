@@ -3,10 +3,10 @@
      <div class="col s2 green lighten-5 mainContainer">
         <div class="row">
             <div class="col s12 center-align">
-                <img class="circle fotoPerfil" src="/assets/fotoPerfil1.jpeg" alt="imagen de prefil">
+                <img class="circle fotoPerfil" src="/assets/generic_user_pic.jpg" alt="imagen de prefil">
             </div>
             <div class="col s12 center-align">
-                <h6>Oscar Umaña</h6>
+                <h6><%= typeof cliente.nombre != 'undefined' ? cliente.nombre : '' %></h6>
             </div>
             <div class="col s12">
                 <hr>
@@ -41,6 +41,10 @@
                         <option value="distribuidor">Distribuidor</option>
                     </select>
                     <label>Tipo de usuario</label>
+                </div>
+                <div class="input-field col s12">
+                    <input type="text" name="capacidad" id="capacidad" class="validate" value="<%= typeof cliente.capacidad != 'undefined' ? cliente.capacidad : '' %>">
+                    <label for="capacidad">Capacidad (kg)</label>
                 </div>
                 <div class="col s12">
                     <h5>Información de contacto</h5>

@@ -193,6 +193,7 @@ router.post('/main', urlencodedParser, (req, res) => {
     var nombre = req.body.nombre;
     var email = req.body.email;
     var rol = req.body.rol;
+    var capacidad = req.body.capacidad;
     var telefono = req.body.telefono;
     var paginaWeb = req.body.paginaWeb;
     var direccion = req.body.direccion;
@@ -212,7 +213,7 @@ router.post('/main', urlencodedParser, (req, res) => {
     } else {
         client.connect().then(() => {
             console.log('main:post cliente conectado')
-            var consultaUpdate = 'update public.clientes set nombre=\'' + nombre + '\', rol=\'' + rol + '\', telefono=\'' + telefono + '\', pagina_web=\'' + paginaWeb + '\', direccion=\'' + direccion + '\', mision=\'' + mision + '\', vision=\'' + vision +'\''
+            var consultaUpdate = 'update public.clientes set nombre=\'' + nombre + '\', capacidad=\'' + capacidad + '\', rol=\'' + rol + '\', telefono=\'' + telefono + '\', pagina_web=\'' + paginaWeb + '\', direccion=\'' + direccion + '\', mision=\'' + mision + '\', vision=\'' + vision +'\' where id=\'' + email + '\''
             
             client.query(consultaUpdate, (err, res2) => {
                 if(err){
@@ -225,6 +226,7 @@ router.post('/main', urlencodedParser, (req, res) => {
                     //alert('Información actualizada');
                     clienteGlobal.setNombre(nombre);
                     clienteGlobal.setRol(rol);
+                    clienteGlobal.setCapacidad(capacidad);
                     clienteGlobal.setTelefono(telefono);
                     clienteGlobal.setPaginaWeb(paginaWeb);
                     clienteGlobal.setDireccion(direccion);
@@ -247,7 +249,44 @@ router.post('/main', urlencodedParser, (req, res) => {
 router.get('/busquedas', (req, res) => {
     console.log('busquedas:get impresion de cliente global')
     console.log(clienteGlobal);
-    res.render('busquedas');
+
+    var nombre = clienteGlobal.nombre;
+
+    var listaUsuarios = [];
+
+    const client = new Client({
+        connectionString:db
+    });
+
+    client.connect().then(() => {
+        var consulta = 'select id, nombre, rol, capacidad, provincia from public.clientes'
+        client.query(consulta, (err, res2) => {
+            if(err){
+                console.log('busquedas:get no se pudo realizar la consulta');
+                res.render('busquedas', {listaUsuarios, nombre});
+            } else {
+                
+                console.log('busquedas:get impresion de los rows');
+                //console.log(res2.rows[0]);
+                res2.rows.forEach(row => {
+                    listaUsuarios.push(row);
+                });
+
+                console.log('busquedas:get impresion de los elementos de lista usuarios');
+
+                listaUsuarios.forEach(elem => {
+                    console.log(elem)
+                });
+                
+                res.render('busquedas', {listaUsuarios, nombre})
+            }
+        })
+    }).catch(err => console.log(err));
+})
+
+router.post('/busquedas', urlencodedParser, (req, res) => {
+    console.log('busquedas:post impresion de cliente global')
+    console.log(clienteGlobal);
 })
 
 router.get('/chat', (req, res) => {
@@ -258,8 +297,45 @@ router.get('/chatConversacion', (req, res) => {
     res.render('chatConversacion');
 })
 
-router.get('/verPerfilBuscado', (req, res) => {
-    res.render('verPerfilBuscado');
+router.get(['/verPerfilBuscado/:id'], (req, res) => {
+    console.log('verPerfilBuscado:get impresión de req.params');
+    var idUsuario = req.params.id;
+
+    var nombre = clienteGlobal.nombre
+
+    const client = new Client({
+        connectionString:db
+    });
+
+    client.connect().then(() => {
+        var consulta = 'select * from public.clientes where id=\'' + idUsuario + '\'';
+        client.query(consulta, (err, res2) => {
+            if(err){
+                console.log('verPerfilBuscado:get no se pudo realizar la consulta para encontrar el usuario');
+                res.render('busquedas');
+            } else {
+                console.log('verPerfilBuscado:get respuesta de la consulta');
+                console.log(res2.rows[0]);
+                var respuesta = res2.rows[0];
+                var cliente = new UsuarioModel(
+                    respuesta.id,
+                    respuesta.nombre,
+                    respuesta.tipo_usuario,
+                    respuesta.capacidad,
+                    respuesta.pagina_web,
+                    respuesta.mision,
+                    respuesta.vision,
+                    respuesta.direccion,
+                    respuesta.rol,
+                    respuesta.telefono,
+                    respuesta.provincia,
+                    respuesta.password
+                )
+                res.render('verPerfilBuscado', {cliente, nombre})
+            }
+
+        })
+    }).catch(err => console.log(err));
 })
 
 module.exports = router;

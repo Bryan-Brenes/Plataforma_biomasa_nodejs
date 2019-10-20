@@ -3,10 +3,10 @@
     <div class="col s2 green lighten-5 mainContainer" style="height: 110vh!important;">
         <div class="row">
             <div class="col s12 center-align">
-                <img class="circle fotoPerfil" src="/assets/fotoPerfil1.jpeg" alt="imagen de prefil">
+                <img class="circle fotoPerfil" src="/assets/generic_user_pic.jpg" alt="imagen de prefil">
             </div>
             <div class="col s12 center-align">
-                <h6>Oscar Umaña</h6>
+                <h6><%= typeof nombre != 'undefined' ? nombre : '' %></h6>
             </div>
             <div class="col s12">
                 <hr>
@@ -26,41 +26,32 @@
         <div class="container" style="margin-top: 5%;">
             <div class="row">
                 <div class="col s4 center-align">
-                    <img src="/assets/dos_pinos.jpg" alt="foto de perfil usuario" class="responsive-img">
+                    <img src="/assets/generic_user_pic.jpg" alt="foto de perfil usuario" class="responsive-img">
                 </div>
                 <div class="col s8 userInfo">
                     <div class="row">
                         <div class="col s12">
-                            <h3 style="font-size: 2vw; margin: 17px 0;">Dos Pinos</h3>
+                            <h3 style="font-size: 2vw; margin: 17px 0;"><%= typeof cliente.nombre != 'undefined' ? cliente.nombre : 'Error: cliente no encontrado' %></h3>
                         </div>
                         <div class="col s12">
-                            <p><b>Proveedor</b></p>
+                            <p><b><%= typeof cliente.rol != 'undefined' ? cliente.rol : '' %></b></p>
                         </div>
                         <div class="col s12">
-                            <p><b>Capacidad:</b></p>
-                        </div>
-                        <div class="col s11 offset-s1">
-                            <p>250 kg</p>
+                            <p><b>Capacidad: </b> <%= typeof cliente.capacidad != 'undefined' ? cliente.capacidad : '' %> kg </p>
                         </div>
                         <div class="col s12">
                             <p><b>Información de contacto</b></p>
                             <div class="row reset-margin-padding">
-                                <div class="col s11 offset-s1">
-                                    <p>dospinosconsultas@dospinos.com</p>
-                                </div>
-                                <div class="col s11 offset-s1">
-                                    <p>+506 48516975</p>
-                                </div>
-                                <div class="col s11 offset-s1">
-                                    <p>dospinos.com</p>
-                                </div>
+                                <p><b>Email: </b><%= typeof cliente.id != 'undefined' ? cliente.id : '' %></p>
+                                <p><b>Teléfono: </b><%= typeof cliente.telefono != 'undefined' ? cliente.telefono : '' %></p>
+                                <p><b>Sitio web: </b><%= typeof cliente.paginaWeb != 'undefined' ? cliente.paginaWeb : '' %></p>
                             </div>
                         </div>
                         <div class="col s12">
                             <p><b>Dirección</b></p>
                         </div>
                         <div class="col s12">
-                            <p>Ciudad quesada, provincia de Alajuela</p>
+                            <p><%= typeof cliente.direccion != 'undefined' ? cliente.direccion : '' %></p>
                         </div>
                     </div>
                     <div class="row">
@@ -78,7 +69,7 @@
                         </div>
                         <div class="col s12">
                             <p>
-                                En Dos Pinos contribuimos a la salud y satisfacción de nuestros clientes con alimentos que favorecen una mejor calidad de vida. Buscamos el más alto desempeño en la finca, en la industria y la comercialización, para lograr la mejor retribución al asociado. Dotamos a nuestros colaboradores de un trabajo digno para su bienestar.
+                                <%= typeof cliente.mision != 'undefined' ? cliente.mision : '' %>
                             </p>
                         </div>
                     </div>
@@ -90,7 +81,7 @@
                     </div>
                     <div class="col s12">
                         <p>
-                            Ser la cadena agroindustrial más competitiva de Centroamérica, con elevada productividad, capacidad de investigación y desarrollo, orientada al mercado, produciendo y distribuyendo productos de alta calidad, siendo un excelente empleador y haciendo crecer el liderazgo porcentual sobre nuestros competidores y los negocios de la Cooperativa en Centroamérica y Panamá enforna consistente.
+                            <%= typeof cliente.vision != 'undefined' ? cliente.vision : '' %>
                         </p>
                     </div>
                 </div>
