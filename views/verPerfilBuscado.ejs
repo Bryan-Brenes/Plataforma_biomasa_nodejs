@@ -61,6 +61,7 @@
                 </div>
             </div>
             <div class="row">
+                <% if((cliente.mision != 'undefined' && cliente.mision != '')) {%>
                 <div class="col s6 center-align">
                     <div class="row">
                         <div class="col s12">
@@ -73,7 +74,10 @@
                             </p>
                         </div>
                     </div>
+                
                 </div>
+                <%}%>
+                <% if((cliente.vision != 'undefined' && cliente.vision != '')) {%>
                 <div class="col s6 center-align">
                     <div class="col s12">
                         <h5>Visión</h5>
@@ -85,6 +89,7 @@
                         </p>
                     </div>
                 </div>
+                <%}%>
             </div>
             <div class="row">
                 <div class="col s12">
